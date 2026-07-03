@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Vida - Blog da Gabrielly</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #F5F5F5;
+    }
+
+    header {
+      background-color: #2A2A72; /* azul escuro */
+      color: #FFD700; /* dourado */
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    .logo-blog {
+      width: 200px;
+      height: auto;
+      border-radius: 16px;
+      margin-bottom: 16px;
+    }
+
+    main {
+      background-color: #FFFFFF; /* branco */
+      color: #333; /* cinza escuro pra ler fácil */
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    article {
+      margin-bottom: 32px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 16px;
+    }
+
+    article:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .artigo-autor {
+      font-weight: bold;
+      color: #2A2A72; /* azul escuro */
+    }
+
+    button {
+      background-color: #2A2A72;
+      color: #FFFFFF;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      margin-right: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #4A4A9E;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="minha-vida.png" alt="Logo Minha Vida com uma menina andando com seu cachorro" class="logo-blog">
+    <h1>Minha Vida</h1>
+    <p>Um espaço da Gabrielly pra compartilhar histórias, pensamentos e aprendizados do dia a dia ✨</p>
+  </header>
+
+  <main>
+    <article>
+      <p class="artigo-autor">Por: Gabrielly</p>
+      <p>Fala, galera! Sejam muito bem-vindos ao meu cantinho. Eu sou a Gabrielly e aqui eu vou contar um pouco sobre a minha rotina, as coisas que tô aprendendo, minhas reflexões e tudo que faz parte da minha jornada. Sem filtro, só a vida real mesmo.</p>
+      
+      <div>
+        <button>❤️ <span>0</span></button>
+        <button>👏 <span>0</span></button>
+      </div>
+    </article>
+
+    <article>
+      <div>
+        <h2>Começando esse projeto: Por que um blog?</h2>
+        <p class="artigo-autor">Por: Gabrielly</p>
+        <p>Sempre quis ter um lugar só meu pra escrever. Programar esse blog foi tipo montar um diário, só que na internet. Dá um pouco de trabalho, mas é muito gratificante ver tudo saindo do zero. Nos próximos posts vou falar sobre faculdade, trabalho, hobbies e tudo mais que vier.</p>
+        
+        <div>
+          <button>❤️ <span>0</span></button>
+          <button>👏 <span>0</span></button>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function(botao) {
+      let curtiu = false;
+      botao.addEventListener("click", botaoClicado);
+
+      function botaoClicado() {
+        let texto = botao.querySelector("span");
+        if (curtiu === false){
+          texto.textContent++;
+          curtiu = true;
+        } else{
+          texto.textContent--;
+          curtiu = false;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
